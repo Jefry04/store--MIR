@@ -1,0 +1,11 @@
+/* Abstracts */
+@import './styles/abstract/variables';
+@import './styles/abstract/mixins';
+
+/* base */
+@import './styles/base/reset';
+@import './styles/base/base';
+
+/* components */
+@import './styles/components/productCard.scss';
+@import './styles/pages/home.scss';

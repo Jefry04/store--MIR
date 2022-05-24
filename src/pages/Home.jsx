@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import ProductCard from "../components/ProductCard";
 import { getProucts } from "../store/reducers/Products.reducer";
+
+import ProductCard from "../components/ProductCard";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -13,11 +13,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="card__container">
       {products.map((product) => (
-        <Link key={product.id} to={`details/${product.id}`}>
-          <ProductCard product={product} />
-        </Link>
+        <ProductCard product={product} key={product.id} />
       ))}
     </div>
   );
