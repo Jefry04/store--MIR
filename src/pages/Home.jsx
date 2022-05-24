@@ -13,10 +13,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="card__container">
-      {products.map((product) => (
-        <ProductCard product={product} key={product.id} />
-      ))}
+    <div className="layout__container">
+      <div className="card__container">
+        {products.map((product) => (
+          <ProductCard product={product} key={product.id} />
+        ))}
+      </div>
     </div>
   );
 };
