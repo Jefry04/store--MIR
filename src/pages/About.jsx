@@ -10,13 +10,14 @@ const About = () => {
       <p>Full Stack Developer passionate about technology, 
         ith a degree in Telecommunications engineering, with knowledge 
         in JavaScript. React.Js. Node.js. MongoDB, </p>
-      <h4> 3 things I learnt at Make It Real: </h4>
+      <h4> three things I learned at TOP program in Make It Real: </h4>
       <ul>
         <li>Redux</li>
         <li>React-router</li>
         <li>React</li>
       </ul>
       <strong>jefry04@gmail.com</strong>
+      <strong>GITHUB: </strong>
       <a href="https://github.com/Jefry04" target="_blank" rel="noopener noreferrer">https://github.com/Jefry04</a>
     </div>
   );
