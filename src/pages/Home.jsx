@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getProucts } from "../store/reducers/Products.reducer";
+import { getProducts } from "../store/reducers/Products.reducer";
 
 import ProductCard from "../components/ProductCard";
 
@@ -9,11 +9,11 @@ const Home = () => {
   const { products } = useSelector((state) => state.productsReducer);
 
   useEffect(() => {
-    dispatch(getProucts());
-  }, []);
+    dispatch(getProducts());
+  }, [dispatch, products]);
 
   return (
-    <div className="layout__container">
+    products && <div className="layout__container">
       <div className="card__container">
         {products.map((product) => (
           <ProductCard product={product} key={product.id} />

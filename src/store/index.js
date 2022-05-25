@@ -1,9 +1,11 @@
 import { legacy_createStore as createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import productsReducer from "./reducers/Products.reducer";
+import productDetail from "./reducers/ProductDetail.reducer";
 
 const rootReducer = combineReducers({
-    productsReducer
+    productsReducer,
+    productDetail,
 });
 
 const middleware = applyMiddleware(thunk);

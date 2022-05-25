@@ -1,12 +1,17 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { getProuctDetail } from "../store/reducers/ProductDetail.reducer";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const { products } = useSelector((state) => state.productsReducer);
+  const dispatch = useDispatch();
+  const { productDetails } = useSelector((state) => state.productDetail);
 
-  const productDetails = products.find((product) => product.id === +id);
+  useEffect (() =>{
+    dispatch(getProuctDetail(id))
+  }, [])
+  //const productDetails = products.find((product) => product.id === +id);
 
   return (
     <div className="productdetail_container">
