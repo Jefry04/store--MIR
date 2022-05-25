@@ -10,7 +10,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getProducts());
-  }, [dispatch, products]);
+  }, []);
 
   return (
     products && <div className="layout__container">
