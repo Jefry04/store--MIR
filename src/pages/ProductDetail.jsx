@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {  useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 // import { getProuctDetail } from "../store/reducers/ProductDetail.reducer";
@@ -6,15 +7,14 @@ import { useParams } from "react-router-dom";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const { products } = useSelector((state) => state.productsReducer);
-  // const dispatch = useDispatch();
-  // const { productDetails } = useSelector((state) => state.productDetail);
+   const [productDetails, setProductsDetails] = useState ([])
 
-  // useEffect (() =>{
-  //   dispatch(getProuctDetail(id))
-  // }, [])
+useEffect (() =>{
+  axios.get(`https://fakestoreapi.com/products/${id}`).then((res) => {
+    setProductsDetails(res.data);
+  });
+ }, [])
 
-  const productDetails = products.find((product) => product.id === +id);
 
   return (
     <div className="productdetail_container">
